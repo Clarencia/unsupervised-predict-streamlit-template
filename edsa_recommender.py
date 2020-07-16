@@ -32,6 +32,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+# Open images
+from PIL import Image
 # Custom Libraries
 from utils.data_loader import load_movie_titles
 from recommenders.collaborative_based import collab_model
@@ -45,7 +47,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Recommender System","Solution Overview", "Data Visualisation","Contact Us" ]
+    page_options = ["Welcome","About the App", "Recommender System","Solution Overview", "Data Visualisation","Contact Us" ]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -100,9 +102,15 @@ def main():
     # -------------------------------------------------------------------
 
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------
+    if page_selection == "About the App":
+        st.title("About the App")
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
         st.write("Describe your winning approach on this page")
+    if page_selection == "Welcome":
+        file_ = open("images/welcome.gif", "rb")
+        contents = file_.read()
+        
 
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
