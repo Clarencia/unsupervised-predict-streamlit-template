@@ -104,14 +104,22 @@ def main():
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------
     if page_selection == "About the App":
         st.title("About the App")
+        st.markdown("Are you a movie lover? Are you tired of wasting your time watching tons of trailers and ending up not watching their movies? Are you tired of finishing your popcorns before you find the right movie? Not anymore!!")
+        st.image(["images/tired1.jpg", "images/tired22.jpg"],width=200)
+        st.markdown("You have come to the right app. Based on your favourite watched movies, The Movie Recommender App filters or predicts your preferences based on your choices. With just just a few clicks, you will select three of your most favourite movies from thousands on the app and you will get one movie you are most likely to enjoy")
+        
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
-        st.write("Describe your winning approach on this page")
+        st.markdown("The app uses recommender systems to produce your recommendation in any of the two ways –")
+        st.markdown("**Collaborative filtering**: which builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.")
+        st.markdown("**Content-based filtering**: which uses a series of discrete characteristics of your selected movies in order to recommend additional movies with similar properties.")
     if page_selection == "Welcome":
-        file_ = open("images/welcome.gif", "rb")
-        contents = file_.read()
-        
-
+        st.markdown("![Alt Text](https://github.com/Clarencia/unsupervised-predict-streamlit-template/blob/master/images/welcome.gif?raw=true)")
+        st.markdown("![Alt Text](https://cdn.clipart.email/11d8b5822102da1a7c7a2d015a569485_animated-popcorn-clipart-gif_350-350.gif)")
+    if page_selection == "Contact Us":
+        st.title("Connect with us")
+        st.markdown("For support or any questions contact us here:")
+        st.image(["images/contact.PNG"])
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
 
