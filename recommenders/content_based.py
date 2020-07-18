@@ -36,8 +36,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 # Importing data
 movies = pd.read_csv('resources/data/movies.csv', sep = ',',delimiter=',')
-ratings = pd.read_csv('resources/data/ratings.csv')
-movies.dropna(inplace=True)
 
 def data_preprocessing(subset_size):
     """Prepare data for use within Content filtering algorithm.
@@ -61,7 +59,7 @@ def data_preprocessing(subset_size):
 
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
-def content_model(movie_list,top_n=10):
+def content_model(movie_list,top_n=1):
     """Performs Content filtering based upon a list of movies supplied
        by the app user.
 
