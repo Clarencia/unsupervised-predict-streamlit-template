@@ -38,6 +38,7 @@ from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 # Importing data
 movies = pd.read_csv('resources/data/movies.csv', sep = ',',delimiter=',')
 movies_df=movies
+movies_df = movies_df.drop(movies_df.loc[movies_df["title"].duplicated(keep='first') == True].index)
 
 def data_preprocessing(subset_size):
     """Prepare data for use within Content filtering algorithm.
