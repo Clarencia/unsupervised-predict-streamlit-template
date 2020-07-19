@@ -78,21 +78,21 @@ def content_model(movie_list,top_n=10):
     idx1 = indices[movie_list[0]]
     sim_scores1 = list(enumerate(cosine_sim[idx1]))
     sim_scores1 = sorted(sim_scores1, key=lambda x: x[1], reverse=True)
-    sim_scores1 = sim_scores1[1:2]
+    sim_scores1 = sim_scores1[0:1]
 
     #second movie
     idx2 = indices[movie_list[1]]
     sim_scores2 = list(enumerate(cosine_sim[idx2]))
     sim_scores2 = sorted(sim_scores2, key=lambda x: x[1], reverse=True)
-    sim_scores2 = sim_scores2[1:2]
+    sim_scores2 = sim_scores2[0:1]
 
     #third movie
     idx3 = indices[movie_list[2]]
     sim_scores3 = list(enumerate(cosine_sim[idx3]))
     sim_scores3 = sorted(sim_scores3, key=lambda x: x[1], reverse=True)
-    sim_scores3 = sim_scores3[1:2]
+    sim_scores3 = sim_scores3[0:1]
     
     mix= sim_scores3+sim_scores2+sim_scores1
     mix=sorted(mix,key=lambda x: x[1],reverse=True)
     movie_indices = [i[0] for i in mix]
-    return list(titles.iloc[movie_indices])[0]
+    return [list(titles.iloc[movie_indices])[0]]
