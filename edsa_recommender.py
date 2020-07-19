@@ -112,13 +112,25 @@ def main():
         st.markdown("**Collaborative filtering**: which builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.")
         st.markdown("**Content-based filtering**: which uses a series of discrete characteristics of your selected movies in order to recommend additional movies with similar properties.")
     if page_selection == "Welcome":
-        st.markdown("![Alt Text](https://github.com/Clarencia/unsupervised-predict-streamlit-template/blob/master/images/welcome.gif?raw=true)")
+        st.markdown("![Alt Text](https://github.com/Clarencia/unsupervised-predict-streamlit-template/blob/master/images/welcome.gif?raw=true)",)
         st.markdown("![Alt Text](https://cdn.clipart.email/11d8b5822102da1a7c7a2d015a569485_animated-popcorn-clipart-gif_350-350.gif)")
     if page_selection == "Contact Us":
         st.title("Connect with us")
-        st.markdown("For support or any questions contact us here:")
-        st.image(["images/contact.PNG"])
-
+        st.markdown('''<span style="color:green"> **Please help improve the app by rating it and telling us what you think could be changed to make your experience better.** </span>''', unsafe_allow_html=True)
+        @st.cache(allow_output_mutation=True)
+        def get_data():
+            return []
+        name = st.text_input("User name")
+        inputs = st.text_input("How can we make your experience better?")
+        rate = st.slider("Rate us", 0, 5)
+        if st.button("Submit"):
+            get_data().append({"User name": name, "Suggestion": inputs,"rating":rate})
+        st.markdown('''<span style="color:green"> **What other users said:** </span>''', unsafe_allow_html=True)
+        st.write(pd.DataFrame(get_data()))
+        st.markdown('''<span style="color:green"> **For any questions contact us here:** </span>''', unsafe_allow_html=True)
+        st.image(["images/contact.PNG"],width=800)
+        
+        
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
 
