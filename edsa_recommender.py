@@ -105,7 +105,7 @@ def main():
         st.markdown("Are you a movie lover? Are you tired of wasting your time watching tons of trailers and ending up not watching their movies? Are you tired of finishing your popcorns before you find the right movie? Not anymore!!")
         st.image(["images/tired1.jpg", "images/tired22.jpg"],width=200)
         st.markdown("You have come to the right app.")
-        st.title("How to use the app")
+        #st.title("How to use the app")
         st.markdown(open('resources/data/information.md').read())
         
         
