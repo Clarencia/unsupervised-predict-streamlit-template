@@ -104,8 +104,9 @@ def main():
         st.title("About the App")
         st.markdown("Are you a movie lover? Are you tired of wasting your time watching tons of trailers and ending up not watching their movies? Are you tired of finishing your popcorns before you find the right movie? Not anymore!!")
         st.image(["images/tired1.jpg", "images/tired22.jpg"],width=200)
-        st.markdown("You have come to the right app. The Movie Recommender App filters or predicts your preferences based on your favourite or watched movie selections. With just just a few clicks, you will select three of your most favourite movies from thousands on the app and you will get top 10 movies you are most likely to enjoy")
+        st.markdown("You have come to the right app.")
         st.title("How to use the app")
+        #st.markdown("y to enjoy.")
         
         
     if page_selection == "Solution Overview":
