@@ -106,7 +106,7 @@ def main():
         st.image(["images/tired1.jpg", "images/tired22.jpg"],width=200)
         st.markdown("You have come to the right app.")
         st.title("How to use the app")
-        #st.markdown("y to enjoy.")
+        st.markdown(open('resources/data/infomation.md').read())
         
         
     if page_selection == "Solution Overview":
