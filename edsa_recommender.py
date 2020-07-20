@@ -117,6 +117,10 @@ def main():
     if page_selection == "Welcome":
         st.markdown("![Alt Text](https://github.com/Clarencia/unsupervised-predict-streamlit-template/blob/master/images/welcome.gif?raw=true)")
         st.markdown("![Alt Text](https://cdn.clipart.email/11d8b5822102da1a7c7a2d015a569485_animated-popcorn-clipart-gif_350-350.gif)")
+        st.markdown("Below we have an educational video explaining more about recommender systems, how they work and why are recommender systems important.")
+        
+        st.video('https://www.youtube.com/watch?v=U-yq3I9QugQ')
+        
     if page_selection == "Contact Us":
         st.title("Connect with us")
         st.markdown('''<span style="color:green"> **Please help improve the app by rating it and telling us what you think could be changed to make your experience better.** </span>''', unsafe_allow_html=True)
