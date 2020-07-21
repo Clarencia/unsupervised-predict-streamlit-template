@@ -36,7 +36,7 @@ from surprise import Reader, Dataset
 from surprise import SVD, NormalPredictor, BaselineOnly, KNNBasic, NMF
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
-
+import random 
 import scipy as sp
 import operator # <-- Convienient item retrieval during iteration 
 import heapq
