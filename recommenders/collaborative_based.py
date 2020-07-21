@@ -88,8 +88,8 @@ def collab_model(movie_list,top_n=10):
     
     #select movie 1
     if movie_list[0] or movie_list[1] or movie_list[2] not in movie_sim_df.columns:
-        recommended_movies=rate.groupby('title').mean().sort_values(by='rating', ascending=False).index[:top_n].to_list()
-
+        reco=rate.groupby('title').mean().sort_values(by='rating', ascending=False).index[:50].to_list()
+        recommended_movies=random.sample(reco, top_n)
     else:
         movie1 = pd.DataFrame(movie_sim_df[movie_list[0]])
         movie1= movie1.reset_index()
