@@ -104,16 +104,25 @@ def main():
         st.title("About the App")
         st.markdown("Are you a movie lover? Are you tired of wasting your time watching tons of trailers and ending up not watching their movies? Are you tired of finishing your popcorns before you find the right movie? Not anymore!!")
         st.image(["images/tired1.jpg", "images/tired22.jpg"],width=200)
-        st.markdown("You have come to the right app. The Movie Recommender App filters or predicts your preferences based on your favourite or watched movie selections. With just just a few clicks, you will select three of your most favourite movies from thousands on the app and you will get top 10 movies you are most likely to enjoy")
+        st.markdown("You have come to the right app.")
+        #st.title("How to use the app")
+        st.markdown(open('resources/data/information.md').read())
+        
+        
         
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
         st.markdown("The app uses recommender systems to produce your recommendation in any of the two ways –")
         st.markdown("**Collaborative filtering**: which builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.")
         st.markdown("**Content-based filtering**: which uses a series of discrete characteristics of your selected movies in order to recommend additional movies with similar properties.")
+        st.markdown("Below we have a video explaining more about recommender systems, how they work and why are recommender systems important.")
+        if st.checkbox('View video'): # data is hidden if box is unchecked
+            st.video('https://www.youtube.com/watch?v=U-yq3I9QugQ')
+        
     if page_selection == "Welcome":
         st.markdown("![Alt Text](https://github.com/Clarencia/unsupervised-predict-streamlit-template/blob/master/images/welcome.gif?raw=true)")
         st.markdown("![Alt Text](https://cdn.clipart.email/11d8b5822102da1a7c7a2d015a569485_animated-popcorn-clipart-gif_350-350.gif)")
+        
     if page_selection == "Contact Us":
         st.title("Connect with us")
         st.markdown('''<span style="color:green"> **Please help improve the app by rating it and telling us what you think could be changed to make your experience better.** </span>''', unsafe_allow_html=True)
