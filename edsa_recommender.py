@@ -107,6 +107,8 @@ def main():
         st.markdown("You have come to the right app.")
         #st.title("How to use the app")
         st.markdown(open('resources/data/information.md').read())
+        st.text(https://www.themoviedb.org/)
+        st.text(https://www.imdb.com/)
         
         
     if page_selection == "Solution Overview":
