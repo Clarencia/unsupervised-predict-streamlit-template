@@ -11,3 +11,6 @@
  Additional movie content data was legally scraped from IMDB.
  
  ### Movie links
+ 
+ 1. https://www.themoviedb.org/
+ 2. https://www.imdb.com/
