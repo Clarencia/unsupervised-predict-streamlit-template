@@ -60,7 +60,7 @@ def prediction_item(item_id):
         User IDs of users with similar high ratings for the given movie.
 
     """
-    rate= pd.merge(ratings[['userId','movieId','rating']],movies_df[['title',"movieId"]],on = "movieId")
+rate= pd.merge(ratings[['userId','movieId','rating']],movies_df[['title',"movieId"]],on = "movieId")
 util_matrix = rate.pivot_table(index=['title'], columns=['userId'],values='rating')  
 
 # Normalize each row (a given user's ratings) of the utility matrix
