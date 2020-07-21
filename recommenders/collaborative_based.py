@@ -87,7 +87,7 @@ def collab_model(movie_list,top_n=10):
     
     
     #select movie 1
-    if movie_list[1] and movie_list[1] and movie_list[1] not in movie_sim_df.columns:
+    if movie_list[0] or movie_list[1] or movie_list[2] not in movie_sim_df.columns:
         recommended_movies=rate.groupby('title').mean().sort_values(by='rating', ascending=False).index[:N].to_list()
 
     else:
