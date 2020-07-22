@@ -103,7 +103,7 @@ def collab_model(movie_list,top_n=10):
         movie2=pd.DataFrame(movie2,columns=['title','similarity'])
     #select movie 3
     if movie_list[2] not in movie_sim_df.columns:
-        movie2= pd.DataFrame()
+        movie3= pd.DataFrame()
     else:
         movie3 = pd.DataFrame(movie_sim_df[movie_list[2]])
         movie3= movie3.reset_index()
