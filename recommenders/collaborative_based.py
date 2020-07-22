@@ -115,9 +115,8 @@ def collab_model(movie_list,top_n=10):
         reco=rate.groupby('title').mean().sort_values(by='rating', ascending=False).index[:10].to_list()
         recommended_movies=random.sample(reco, top_n)
     else:
-    movie_list[0] and movie_list[1] and movie_list[2] in movie_sim_df.columns:
-    recommended_movies=finalmovies.sort_values('similarity',ascending=False)
-    recommended_movies=list(recommended_movies[3:13]['title'])
+        recommended_movies=finalmovies.sort_values('similarity',ascending=False)
+        recommended_movies=list(recommended_movies[3:13]['title'])
 
         
         
