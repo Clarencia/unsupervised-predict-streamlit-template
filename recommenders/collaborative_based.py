@@ -86,7 +86,7 @@ movie_sim_df = pd.DataFrame(movie_similarity,index = util_matrix_norm.columns,co
 def collab_model(movie_list,top_n=10):
    
     #select movie 1
-    if movie[0] not in movie_sim_df.columns:
+    if movie_list[0] not in movie_sim_df.columns:
         movie1 = pd.DataFrame()
     else:
         movie1 = pd.DataFrame(movie_sim_df[movie_list[0]])
@@ -94,7 +94,7 @@ def collab_model(movie_list,top_n=10):
         movie1['similarity']= movie1[movie_list[0]]
         movie1=pd.DataFrame(movie1,columns=['title','similarity'])
     #select movie 2
-    if movie[1] not in movie_sim_df.columns:
+    if movie_list[1] not in movie_sim_df.columns:
         movie2= pd.DataFrame()
     else:
         movie2 = pd.DataFrame(movie_sim_df[movie_list[1]]) 
@@ -102,7 +102,7 @@ def collab_model(movie_list,top_n=10):
         movie2['similarity']= movie2[movie_list[1]]
         movie2=pd.DataFrame(movie2,columns=['title','similarity'])
     #select movie 3
-    if movie[2] not in movie_sim_df.columns:
+    if movie_list[2] not in movie_sim_df.columns:
         movie2= pd.DataFrame()
     else:
         movie3 = pd.DataFrame(movie_sim_df[movie_list[2]])
