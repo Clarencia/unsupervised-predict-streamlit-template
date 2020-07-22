@@ -116,8 +116,6 @@ def collab_model(movie_list,top_n=10):
         recommended_movies=random.sample(reco, top_n)
     else:
         recommended_movies=finalmovies.sort_values('similarity',ascending=False)
-        recommended_movies=list(recommended_movies[3:13]['title'])
-
-        
-        
+        recommended_movies = recommended_movies[~(recommended_movies['title'].isin(movie_list))]
+        recommended_movies=list(recommended_movies[0:10]['title'])
     return recommended_movies
