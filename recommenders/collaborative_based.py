@@ -86,7 +86,6 @@ movie_sim_df = pd.DataFrame(movie_similarity,index = util_matrix_norm.columns,co
 def collab_model(movie_list,top_n=10):
     
     #select movie 1
-    movie_list[0] and movie_list[1] and movie_list[2] in movie_sim_df.columns:
     movie1 = pd.DataFrame(movie_sim_df[movie_list[0]])
     movie1= movie1.reset_index()
     movie1['similarity']= movie1[movie_list[0]]
