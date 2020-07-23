@@ -5,9 +5,8 @@
 
 ![Movie_Recommendations](resources/imgs/ReadMe_Image.jpg)
 
-This repository forms the basis of *Task 2* for the **Unsupervised Predict** within EDSA's Data Science course. It hosts template code which will enable students to deploy a basic recommender engine based upon the [Streamlit](https://www.streamlit.io/) web application framework.
-
-As part of the predict, students are expected to expand on this base template; improving (and fixing) the given base recommender algorithms, as well as providing greater context to the problem and attempted solutions through additional application pages/functionality.    
+This repository hosts code for team TS2 JHB (#Heckaholics) which deploys a recommender engine based upon the [Streamlit](https://www.streamlit.io/) web application framework.
+ 
 
 #### 1.1) What is a Recommender System?
 
