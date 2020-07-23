@@ -155,6 +155,10 @@ def main():
             st.image(Image.open("images/run_time_vs.PNG"))
         elif insights=="Change in movies runtime over the years":
             st.image(Image.open("images/run_timeyear_vs.PNG"))
+            
+        if st.checkbox('View visuals'):
+            st.markdown('Top 50 words in movie titles')
+            st.image(Image.open("images/wordcloud_titles_vs.PNG"))
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
 
