@@ -159,6 +159,23 @@ def main():
         if st.checkbox('View visuals'):
             st.markdown('Top 50 words in movie titles')
             st.image(Image.open("images/wordcloud_titles_vs.PNG"))
+            st.markdown('Number of movies in each genre')
+            st.image(Image.open("images/genre_dist_vs.PNG"))
+            st.markdown('Proportion of genres per year')
+            st.image(Image.open("images/genre_dist_year_vs.PNG"))
+            st.markdown('Genre performance per year')
+            st.image(Image.open("images/incre_genre_vs.PNG"))
+            st.markdown('Distribution of movies based on runtime')
+            st.image(Image.open("images/run_time_vs.PNG"))
+            st.markdown('Change in movies runtime over the years')
+            st.image(Image.open("images/run_timeyear_vs.PNG"))
+            
+            
+            
+            
+            
+            
+            
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
 
