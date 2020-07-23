@@ -3,7 +3,7 @@
 
 ## 1) Overview
 
-![Movie_Recommendations](resources/imgs/Image_header.png)
+![Movie_Recommendations](resources/imgs/ReadMe_Image.jpg)
 
 This repository forms the basis of *Task 2* for the **Unsupervised Predict** within EDSA's Data Science course. It hosts template code which will enable students to deploy a basic recommender engine based upon the [Streamlit](https://www.streamlit.io/) web application framework.
 
