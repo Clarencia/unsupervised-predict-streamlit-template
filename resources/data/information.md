@@ -10,7 +10,7 @@
  The data for the MovieLens dataset is maintained by the GroupLens research group in the Department of Computer Science and Engineering at the University of Minnesota. 
  Additional movie content data was legally scraped from IMDB.
  
- ### Movie links
+ ### Visit the sites below to access your favourite movies
  
- 1. https://www.themoviedb.org/
- 2. https://www.imdb.com/
+ 1. [The Movie DB](https://www.themoviedb.org/)
+ 2. [IMDb](https://www.imdb.com/)

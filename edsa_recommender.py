@@ -31,6 +31,7 @@ import streamlit as st
 # Data handling dependencies
 import pandas as pd
 import numpy as np
+from PIL import Image
 
 # Custom Libraries
 from utils.data_loader import load_movie_titles
@@ -45,7 +46,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Welcome","About the App", "Recommender System","Solution Overview", "Data Visualisation","Contact Us" ]
+    page_options = ["Welcome","About the App", "Recommender System","Solution Overview", "Movie Insights","Contact Us" ]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -108,16 +109,14 @@ def main():
         #st.title("How to use the app")
         st.markdown(open('resources/data/information.md').read())
         
-        
-        
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
         st.markdown("The app uses recommender systems to produce your recommendation in any of the two ways –")
         st.markdown("**Collaborative filtering**: which builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.")
         st.markdown("**Content-based filtering**: which uses a series of discrete characteristics of your selected movies in order to recommend additional movies with similar properties.")
-        st.markdown("Below we have a video explaining more about recommender systems, how they work and why are recommender systems important.")
+        st.markdown("Below we have a video explaining more about recommender systems, how they work and why the recommender systems are important.")
         if st.checkbox('View video'): # data is hidden if box is unchecked
-            st.video('https://www.youtube.com/watch?v=U-yq3I9QugQ')
+            st.video('https://www.youtube.com/watch?v=aCRN67RAMco')
         
     if page_selection == "Welcome":
         st.markdown("![Alt Text](https://github.com/Clarencia/unsupervised-predict-streamlit-template/blob/master/images/welcome.gif?raw=true)")
@@ -138,8 +137,24 @@ def main():
         st.write(pd.DataFrame(get_data()))
         st.markdown('''<span style="color:green"> **For any questions contact us here:** </span>''', unsafe_allow_html=True)
         st.image(["images/contact.PNG"],width=800)
-        
-        
+    if page_selection ==  "Movie Insights":
+        st.title("Movie Insights")
+        st.markdown('This page gives you all the insights you must have about movies from the IMDb and The Movie DB sites. The visuals will be updated everytime a new movie is uploaded into on of the mentioned websites.')
+        insights= st.radio("Select a visual you would like to see",('Pie chart displaying a count ratings', 'Number of movies in each genre', 'Proportion of genres per year', 'Genre performance per year', 'Top 50 words in movie titles','Distribution of movies based on runtime', 'Change in movies runtime over the years'))
+        if insights=='Pie chart displaying a count ratings':
+            st.image(Image.open("images/pie_ratings_vs.PNG"))
+        elif insights =='Number of movies in each genre':
+            st.image(Image.open("images/genre_dist_vs.PNG"))
+        elif insights== 'Proportion of genres per year':
+            st.image(Image.open("images/genre_dist_year_vs.PNG"))
+        elif insights== 'Genre performance per year':   
+            st.image(Image.open("images/incre_genre_vs.PNG"))
+        elif insights== 'Top 50 words in movie titles':
+            st.image(Image.open("images/wordcloud_titles_vs.PNG")) 
+        elif insights=='Distribution of movies based on runtime':
+            st.image(Image.open("images/run_time_vs.PNG"))
+        elif insights=="Change in movies runtime over the years":
+            st.image(Image.open("images/run_timeyear_vs.PNG"))
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
 
