@@ -25,8 +25,8 @@ Below is a high-level description of the contents within this repo:
 | File Name                             | Description                                                       |
 | :---------------------                | :--------------------                                             |
 | `edsa_recommender.py`                 | Base Streamlit application definition.                            |
-| `recommenders/collaborative_based.py` | Simple implementation of collaborative filtering.                 |
-| `recommenders/content_based.py`       | Simple implementation of content-based filtering.                 |
+| `recommenders/collaborative_based.py` | implementation of collaborative filtering.                 |
+| `recommenders/content_based.py`       | implementation of content-based filtering.                 |
 | `resources/data/`                     | Sample movie and rating data used to demonstrate app functioning. |
 | `resources/models/`                   | Folder to store model and data binaries if produced.              |
 | `utils/`                              | Folder to store additional helper functions for the Streamlit app |
@@ -48,19 +48,10 @@ In order to make your improvements, we have a few instructions to guide you:
   - **Use computing power if necessary**. As mentioned before, the compute resources required for this task are heavy. As such, when the need arises, switch to an AWS instance with greater computing power. (**NB:** We'll require that you restrict this to one large AWS instance (t2.2xlarge/t2.xlarge) per team).
 
 
-#### 2.2) Creating a copy of this repo
 
-| :zap: WARNING :zap:                                                                                     |
-| :--------------------                                                                                   |
-| Do **NOT** *clone* this repository. Instead follow the instructions in this section to *fork* the repo. |
+#### 2.2) Running the recommender system locally
 
-As described within the Predict instructions for the Unsupervised Sprint, this code represents a *template* from which to extend your own work. As such, in order to modify the template, you will need to **[fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)** this repository. Failing to do this will lead to complications when trying to work on the web application remotely.
-
-To fork the repo, simply ensure that you are logged into your GitHub account, and then click on the 'fork' button at the top of this page.
-
-#### 2.3) Running the recommender system locally
-
-As a first step to becoming familiar with our web app's functioning, we recommend setting up a running instance on your own local machine.
+To becoming familiar with our web app's functioning, we recommend setting up a running instance on your own local machine.
 
 To do this, follow the steps below by running the given commands within a Git bash (Windows), or terminal (Mac/Linux):
 
