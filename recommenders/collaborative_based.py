@@ -112,10 +112,10 @@ def collab_model(movie_list,top_n=10):
 
     finalmovies= pd.concat([movie1,movie2,movie3])
     if finalmovies.empty:
-        reco=rate.groupby('title').mean().sort_values(by='rating', ascending=False).index[:10].to_list()
+        reco=rate.groupby('title').mean().sort_values(by='rating', ascending=False).index[:top_n].to_list()
         recommended_movies=random.sample(reco, top_n)
     else:
         recommended_movies=finalmovies.sort_values('similarity',ascending=False)
         recommended_movies = recommended_movies[~(recommended_movies['title'].isin(movie_list))]
-        recommended_movies=list(recommended_movies[0:10]['title'])
+        recommended_movies=list(recommended_movies[0:top_n]['title'])
     return recommended_movies

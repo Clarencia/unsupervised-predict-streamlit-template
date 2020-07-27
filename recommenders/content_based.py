@@ -38,33 +38,20 @@ from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 # Importing data
 movies = pd.read_csv('resources/data/movies.csv', sep = ',',delimiter=',')
 movies_df=movies
+# Drop duplicates and keep first appearence
 movies_df = movies_df.drop(movies_df.loc[movies_df["title"].duplicated(keep='first') == True].index)
 
-def data_preprocessing(subset_size):
-    """Prepare data for use within Content filtering algorithm.
-
-    Parameters
-    ----------
-    subset_size : int
-        Number of movies to use within the algorithm.
-
-    Returns
-    -------
-    Pandas Dataframe
-        Subset of movies selected for content-based filtering.
-
-    """
-    # Split genre data into individual words.
-    movies['keyWords'] = movies['genres'].str.replace('|', ' ')
-    # Subset of the data
-    movies_subset = movies[:subset_size]
-    return movies_subset
 
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
 def content_model(movie_list,top_n=10):
+    # Create a subset
     df=movies_df[:27000]
+    
+    # Preprocessing
     df['genres'] = df['genres'].str.replace('|', ' ')
+    
+    # Creating a tfidf matrix and getting similarity indices
     tf = TfidfVectorizer(analyzer='word',ngram_range=(1, 2),min_df=0, stop_words='english')
     tfidf_matrix = tf.fit_transform(df['genres'])
     tfidf_matrix.shape
@@ -78,23 +65,24 @@ def content_model(movie_list,top_n=10):
     idx1 = indices[movie_list[0]]
     sim_scores1 = list(enumerate(cosine_sim[idx1]))
     sim_scores1 = sorted(sim_scores1, key=lambda x: x[1], reverse=True)
-    sim_scores1 = sim_scores1[0:5]
+   
 
     #second movie
     idx2 = indices[movie_list[1]]
     sim_scores2 = list(enumerate(cosine_sim[idx2]))
     sim_scores2 = sorted(sim_scores2, key=lambda x: x[1], reverse=True)
-    sim_scores2 = sim_scores2[0:5]
+    
 
     #third movie
     idx3 = indices[movie_list[2]]
     sim_scores3 = list(enumerate(cosine_sim[idx3]))
     sim_scores3 = sorted(sim_scores3, key=lambda x: x[1], reverse=True)
-    sim_scores3 = sim_scores3[0:5]
+    
     
     mix= sim_scores3+sim_scores2+sim_scores1
     mix=sorted(mix,key=lambda x: x[1],reverse=True)
     movie_indices = [i[0] for i in mix]
-    recc=(titles.iloc[movie_indices])
-    recc= [ elem for elem in recc if elem not in movie_list]
-    return recc[0:top_n]
+    recommended_movies=(titles.iloc[movie_indices])
+    recommended_movies= [ elem for elem in recc if elem not in movie_list]
+    recommended_movies= recommended_movies[0:top_n]
+    return recommended_movies
