@@ -45,7 +45,7 @@ movies_df = movies_df.drop(movies_df.loc[movies_df["title"].duplicated(keep='fir
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
 def content_model(movie_list,top_n=10):
-    df=movies_df
+    df=movies_df[:27000]
     df['genres'] = df['genres'].str.replace('|', ' ')
     tf = TfidfVectorizer(analyzer='word',ngram_range=(1, 2),min_df=0, stop_words='english')
     tfidf_matrix = tf.fit_transform(df['genres'])
