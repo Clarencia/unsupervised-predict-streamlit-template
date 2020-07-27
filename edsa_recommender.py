@@ -144,7 +144,8 @@ def main():
         if insights=='Pie chart displaying a count ratings':
             st.image(Image.open("images/pie_ratings_vs.PNG"))
         elif insights =='Number of movies in each genre':
-            st.image(Image.open("images/genre_dist_vs.PNG"))
+            st.image(Image.open("images/genre_dist_vs-min"))
+            st.markdown("The Drama genre has  more movies than any other genre in the movies. This makes sense as this genre is about a representation of real life experiences, which you are most likely to find in movies. Comedy, Romance and Thriller also appear to be common genre, supporting that most movies are about love and violence as seen in the title wordcloud.") 
         elif insights== 'Proportion of genres per year':
             st.image(Image.open("images/genre_dist_year_vs.PNG"))
         elif insights== 'Genre performance per year':   
