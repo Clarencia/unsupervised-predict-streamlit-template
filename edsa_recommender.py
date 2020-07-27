@@ -140,7 +140,7 @@ def main():
     if page_selection ==  "Movie Insights":
         st.title("Movie Insights")
         st.markdown('This page gives you all the insights you must have about movies from the IMDb and The Movie DB sites. The visuals will be updated everytime a new movie is uploaded into on of the mentioned websites.')
-        insights= st.radio("Select a visual you would like to see",('Pie chart displaying a count ratings', 'Number of movies in each genre', 'Proportion of genres per year', 'Genre performance per year', 'Top 50 words in movie titles','Distribution of movies based on runtime', 'Change in movies runtime over the years'))
+        insights= st.radio("Select a visual you would like to see",('Pie chart displaying a count ratings', 'Number of movies in each genre', 'Proportion of genres per year', 'Genre performance per year', 'Top 50 words in movie titles','Distribution of movies based on runtime', 'Change in movies runtime over the years',"View all visuals"))
         if insights=='Pie chart displaying a count ratings':
             st.image(Image.open("images/pie_ratings_vs.PNG"))
         elif insights =='Number of movies in each genre':
@@ -156,8 +156,7 @@ def main():
             st.image(Image.open("images/run_time_vs.PNG"))
         elif insights=="Change in movies runtime over the years":
             st.image(Image.open("images/run_timeyear_vs.PNG"))
-            
-        if st.checkbox('View visuals'):
+        elif insights=="View all visuals":    
             st.markdown('Top 50 words in movie titles')
             st.image(Image.open("images/wordcloud_titles_vs.PNG"))
             st.markdown('Number of movies in each genre')

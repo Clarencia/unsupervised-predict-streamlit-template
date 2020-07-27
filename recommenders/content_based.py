@@ -83,6 +83,6 @@ def content_model(movie_list,top_n=10):
     mix=sorted(mix,key=lambda x: x[1],reverse=True)
     movie_indices = [i[0] for i in mix]
     recommended_movies=(titles.iloc[movie_indices])
-    recommended_movies= [ elem for elem in recc if elem not in movie_list]
+    recommended_movies= [ elem for elem in recommended_movies if elem not in movie_list]
     recommended_movies= recommended_movies[0:top_n]
     return recommended_movies
