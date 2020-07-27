@@ -145,16 +145,20 @@ def main():
             st.image(Image.open("images/ratingss.PNG"))
         elif insights =='Number of movies in each genre':
             st.image(Image.open("images/genre_dist_vs.PNG"))
+            st.markdown("The Drama genre has  more movies than any other genre in the movies. This makes sense as this genre is about a representation of real life experiences, which you are most likely to find in movies. Comedy, Romance and Thriller also appear to be common genre, supporting that most movies are about love and violence as seen in the title wordcloud.") 
         elif insights== 'Proportion of genres per year':
             st.image(Image.open("images/genre_dist_year_vs.PNG"))
         elif insights== 'Genre performance per year':   
             st.image(Image.open("images/incre_genre_vs.PNG"))
+            st.markdown(open('resources/data/rate.md').read())
         elif insights== 'Top 50 words in movie titles':
             st.image(Image.open("images/wordcloud_titles_vs.PNG")) 
+            st.markdown(open('resources/data/word.md').read())
         elif insights=='Distribution of movies based on runtime':
             st.image(Image.open("images/run_time_vs.PNG"))
         elif insights=="Change in movies runtime over the years":
             st.image(Image.open("images/run_timeyear_vs.PNG"))
+            st.markdown(open('resources/data/running.md').read())
         elif insights=="View all visuals":    
             st.markdown('Top 50 words in movie titles')
             st.image(Image.open("images/wordcloud_titles_vs.PNG"))
