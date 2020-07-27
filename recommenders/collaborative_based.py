@@ -46,27 +46,9 @@ movies_df = pd.read_csv('resources/data/movies.csv',sep = ',',delimiter=',')
 ratings = pd.read_csv('resources/data/ratings.csv')
 ratings.drop(['timestamp'], axis=1,inplace=True)
 
-# We make use of an SVD model trained on a subset of the MovieLens 10k dataset.
-model=pickle.load(open('resources/models/SVD.pkl', 'rb'))
-
-def prediction_item(item_id):
-    """Map a given favourite movie to users within the
-       MovieLens dataset with the same preference.
-
-    Parameters
-    ----------
-    item_id : int
-        A MovieLens Movie ID.
-
-    Returns
-    -------
-    list
-        User IDs of users with similar high ratings for the given movie.
-
-    """
+# Merge the datasets
 rate= pd.merge(ratings[['userId','movieId','rating']],movies_df[['title',"movieId"]],on = "movieId")
 util_matrix = rate.pivot_table(index=['title'], columns=['userId'],values='rating')  
-
 # Normalize each row (a given user's ratings) of the utility matrix
 util_matrix_norm = util_matrix.apply(lambda x: (x-np.mean(x))/(np.max(x)-np.min(x)), axis=1)
 # Fill Nan values with 0's, transpose matrix, and drop users with no ratings
@@ -80,8 +62,7 @@ util_matrix_sparse = sp.sparse.csr_matrix(util_matrix_norm.values)
 movie_similarity = cosine_similarity(util_matrix_sparse.T)
 # Save the matrix as a dataframe to allow for easier indexing  
 movie_sim_df = pd.DataFrame(movie_similarity,index = util_matrix_norm.columns,columns = util_matrix_norm.columns)
-    
-                           
+        
 
 def collab_model(movie_list,top_n=10):
    
