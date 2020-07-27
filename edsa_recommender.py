@@ -155,8 +155,7 @@ def main():
             st.image(Image.open("images/run_time_vs.PNG"))
         elif insights=="Change in movies runtime over the years":
             st.image(Image.open("images/run_timeyear_vs.PNG"))
-            
-        if st.checkbox('View visuals'):
+        elif insights=="View all visuals":    
             st.markdown('Top 50 words in movie titles')
             st.image(Image.open("images/wordcloud_titles_vs.PNG"))
             st.markdown('Number of movies in each genre')
