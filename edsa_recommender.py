@@ -114,7 +114,9 @@ def main():
         st.markdown("The app uses recommender systems to produce your recommendation in any of the two ways –")
         st.markdown("**Collaborative filtering**: which builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.")
         st.markdown("**Content-based filtering**: which uses a series of discrete characteristics of your selected movies in order to recommend additional movies with similar properties.")
-        st.markdown("Below we have a video explaining more about recommender systems, how they work and why the recommender systems are important.")
+        
+        st.markdown('For the app, the best filtering method is the collaborative filter. This model can help users discover new interests. In isolation, the Machine Learning model may not know the user is interested in a given item, but this model might still recommend it because similar users are interested in that item. The collaborative filtering model runs faster, preventing users from running out of patience and data.')
+        st.markdown("Below is a video explaining more about recommender systems, how they work and why the recommender systems are important.")
         if st.checkbox('View video'): # data is hidden if box is unchecked
             st.video('https://www.youtube.com/watch?v=aCRN67RAMco')
         
@@ -148,6 +150,7 @@ def main():
             st.markdown("The Drama genre has  more movies than any other genre in the movies. This makes sense as this genre is about a representation of real life experiences, which you are most likely to find in movies. Comedy, Romance and Thriller also appear to be common genre, supporting that most movies are about love and violence as seen in the title wordcloud.") 
         elif insights== 'Proportion of genres per year':
             st.image(Image.open("images/genre_dist_year_vs.PNG"))
+            st.markdown(open('resources/data/rate.md').read())
         elif insights== 'Genre performance per year':   
             st.image(Image.open("images/incre_genre_vs.PNG"))
             st.markdown(open('resources/data/rate.md').read())
@@ -155,6 +158,7 @@ def main():
             st.image(Image.open("images/wordcloud_titles_vs.PNG")) 
             st.markdown(open('resources/data/word.md').read())
         elif insights=='Distribution of movies based on runtime':
+            st.markdown('This shows that most of the movies are having a runtime of around 100 minutes')
             st.image(Image.open("images/run_time_vs.PNG"))
         elif insights=="Change in movies runtime over the years":
             st.image(Image.open("images/run_timeyear_vs.PNG"))
