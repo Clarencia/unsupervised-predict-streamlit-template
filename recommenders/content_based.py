@@ -38,32 +38,14 @@ from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 # Importing data
 movies = pd.read_csv('resources/data/movies.csv', sep = ',',delimiter=',')
 movies_df=movies
+# Drop duplicates and keep first appearence
 movies_df = movies_df.drop(movies_df.loc[movies_df["title"].duplicated(keep='first') == True].index)
 
-def data_preprocessing(subset_size):
-    """Prepare data for use within Content filtering algorithm.
-
-    Parameters
-    ----------
-    subset_size : int
-        Number of movies to use within the algorithm.
-
-    Returns
-    -------
-    Pandas Dataframe
-        Subset of movies selected for content-based filtering.
-
-    """
-    # Split genre data into individual words.
-    movies['keyWords'] = movies['genres'].str.replace('|', ' ')
-    # Subset of the data
-    movies_subset = movies[:subset_size]
-    return movies_subset
 
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
 def content_model(movie_list,top_n=10):
-    df=movies_df[:27000]
+    df=movies_df
     df['genres'] = df['genres'].str.replace('|', ' ')
     tf = TfidfVectorizer(analyzer='word',ngram_range=(1, 2),min_df=0, stop_words='english')
     tfidf_matrix = tf.fit_transform(df['genres'])
