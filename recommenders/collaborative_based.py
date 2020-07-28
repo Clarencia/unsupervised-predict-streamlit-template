@@ -65,6 +65,20 @@ movie_sim_df = pd.DataFrame(movie_similarity,index = util_matrix_norm.columns,co
         
 
 def collab_model(movie_list,top_n=10):
+    """Map a given favourite movie to users within the
+       MovieLens dataset with the same preference.
+
+    Parameters
+    ----------
+    item_id : int
+        A MovieLens Movie ID.
+
+    Returns
+    -------
+    list
+        User IDs of users with similar high ratings for the given movie.
+
+    """
    
     #select movie 1
     if movie_list[0] not in movie_sim_df.columns:

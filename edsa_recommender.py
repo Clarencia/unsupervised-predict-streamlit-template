@@ -112,9 +112,9 @@ def main():
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
         st.markdown("The app uses recommender systems to produce your recommendation in any of the two ways –")
-        st.markdown("**Collaborative filtering**: which builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.")
         st.markdown("**Content-based filtering**: which uses a series of discrete characteristics of your selected movies in order to recommend additional movies with similar properties.")
-        st.markdown('For the app, the best filtering method is the collaborative filter. This model can help users discover new interests. In isolation, the Machine Learning model may not know the user is interested in a given item, but this model might still recommend it because similar users are interested in that item. The collaborative filtering model runs faster, preventing users from running out of patience and data.')
+        st.markdown("**Collaborative filtering**: which builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.")
+        st.markdown('For this app, the best filtering method is the collaborative filter. This recommender uses user ratings to find similarity between the movies users select and those that they have not watched yet. It allows users discover new interests. In isolation, a Machine Learning model may not know the user is interested in a given movie, but this model might still recommend it because similar movie was rated the same by other users. The collaborative filtering model runs faster, preventing users from running out of patience and data.')
         st.markdown("Below is a video explaining more about recommender systems, how they work and why the recommender systems are important.")
         if st.checkbox('View video'): # data is hidden if box is unchecked
             st.video('https://www.youtube.com/watch?v=aCRN67RAMco')

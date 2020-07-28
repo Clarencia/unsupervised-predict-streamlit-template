@@ -45,6 +45,20 @@ movies_df = movies_df.drop(movies_df.loc[movies_df["title"].duplicated(keep='fir
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
 def content_model(movie_list,top_n=10):
+    """Map a given favourite movie to users within the
+       MovieLens dataset with the same preference.
+
+    Parameters
+    ----------
+    item_id : int
+        A MovieLens Movie ID.
+
+    Returns
+    -------
+    list
+        User IDs of users with similar high ratings for the given movie.
+
+    """
     # Create a subset
     df=movies_df[:27000]
     
