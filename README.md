@@ -3,11 +3,10 @@
 
 ## 1) Overview
 
-![Movie_Recommendations](resources/imgs/Image_header.png)
+![Movie_Recommendations](resources/imgs/ReadMe_Image.jpg)
 
-This repository forms the basis of *Task 2* for the **Unsupervised Predict** within EDSA's Data Science course. It hosts template code which will enable students to deploy a basic recommender engine based upon the [Streamlit](https://www.streamlit.io/) web application framework.
-
-As part of the predict, students are expected to expand on this base template; improving (and fixing) the given base recommender algorithms, as well as providing greater context to the problem and attempted solutions through additional application pages/functionality.    
+This repository hosts code for team TS2 JHB (#Heckaholics) which deploys a recommender engine based upon the [Streamlit](https://www.streamlit.io/) web application framework.
+ 
 
 #### 1.1) What is a Recommender System?
 
@@ -26,8 +25,8 @@ Below is a high-level description of the contents within this repo:
 | File Name                             | Description                                                       |
 | :---------------------                | :--------------------                                             |
 | `edsa_recommender.py`                 | Base Streamlit application definition.                            |
-| `recommenders/collaborative_based.py` | Simple implementation of collaborative filtering.                 |
-| `recommenders/content_based.py`       | Simple implementation of content-based filtering.                 |
+| `recommenders/collaborative_based.py` | implementation of collaborative filtering.                 |
+| `recommenders/content_based.py`       | implementation of content-based filtering.                 |
 | `resources/data/`                     | Sample movie and rating data used to demonstrate app functioning. |
 | `resources/models/`                   | Folder to store model and data binaries if produced.              |
 | `utils/`                              | Folder to store additional helper functions for the Streamlit app |
@@ -49,19 +48,10 @@ In order to make your improvements, we have a few instructions to guide you:
   - **Use computing power if necessary**. As mentioned before, the compute resources required for this task are heavy. As such, when the need arises, switch to an AWS instance with greater computing power. (**NB:** We'll require that you restrict this to one large AWS instance (t2.2xlarge/t2.xlarge) per team).
 
 
-#### 2.2) Creating a copy of this repo
 
-| :zap: WARNING :zap:                                                                                     |
-| :--------------------                                                                                   |
-| Do **NOT** *clone* this repository. Instead follow the instructions in this section to *fork* the repo. |
+#### 2.2) Running the recommender system locally
 
-As described within the Predict instructions for the Unsupervised Sprint, this code represents a *template* from which to extend your own work. As such, in order to modify the template, you will need to **[fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)** this repository. Failing to do this will lead to complications when trying to work on the web application remotely.
-
-To fork the repo, simply ensure that you are logged into your GitHub account, and then click on the 'fork' button at the top of this page.
-
-#### 2.3) Running the recommender system locally
-
-As a first step to becoming familiar with our web app's functioning, we recommend setting up a running instance on your own local machine.
+To becoming familiar with our web app's functioning, we recommend setting up a running instance on your own local machine.
 
 To do this, follow the steps below by running the given commands within a Git bash (Windows), or terminal (Mac/Linux):
 
